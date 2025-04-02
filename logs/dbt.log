@@ -1,0 +1,56 @@
+[0m12:25:28.098242 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001614970A6C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016146768E30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016148FC86B0>]}
+
+
+============================== 12:25:28.110338 | f1706fd1-da7e-4f72-b2ee-f4db1be68bf2 ==============================
+[0m12:25:28.110338 [info ] [MainThread]: Running with dbt=1.10.0-b1
+[0m12:25:28.110338 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\meets\\.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt init', 'send_anonymous_usage_stats': 'True'}
+[0m12:26:40.483541 [debug] [MainThread]: Starter project path: D:\Currecy_Exchange_Glue_Project\.venv\Lib\site-packages\dbt\include\starter_project
+[0m12:26:40.535543 [info ] [MainThread]: 
+Your new dbt project "dbt_currecy" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m12:26:40.535543 [info ] [MainThread]: Setting up your profile.
+[0m12:26:44.004991 [debug] [MainThread]: Redshift adapter: Setting redshift_connector to ERROR
+[0m12:26:44.004991 [debug] [MainThread]: Redshift adapter: Setting redshift_connector.core to ERROR
+[0m12:27:03.005356 [error] [MainThread]: Encountered an error:
+list index out of range
+[0m12:27:03.009535 [error] [MainThread]: Traceback (most recent call last):
+  File "D:\Currecy_Exchange_Glue_Project\.venv\Lib\site-packages\dbt\cli\requires.py", line 153, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Currecy_Exchange_Glue_Project\.venv\Lib\site-packages\dbt\cli\requires.py", line 103, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Currecy_Exchange_Glue_Project\.venv\Lib\site-packages\dbt\cli\main.py", line 479, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "D:\Currecy_Exchange_Glue_Project\.venv\Lib\site-packages\dbt\task\init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "D:\Currecy_Exchange_Glue_Project\.venv\Lib\site-packages\dbt\task\init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "D:\Currecy_Exchange_Glue_Project\.venv\Lib\site-packages\dbt\task\init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "D:\Currecy_Exchange_Glue_Project\.venv\Lib\site-packages\dbt\task\init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Currecy_Exchange_Glue_Project\.venv\Lib\site-packages\dbt\task\init.py", line 114, in generate_target_from_input
+    choice = option_list[numeric_choice - 1]
+             ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+IndexError: list index out of range
+
+[0m12:27:03.012716 [debug] [MainThread]: Command `dbt init` failed at 12:27:03.012197 after 95.29 seconds
+[0m12:27:03.012716 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016149415AC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016149945BE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001614ACF98E0>]}
+[0m12:27:03.014247 [debug] [MainThread]: Flushing usage events
+[0m12:27:04.111977 [debug] [MainThread]: An error was encountered while trying to flush usage events

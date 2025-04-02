@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: s3_staging
+    schema: currency_ext_raw
+    description: "External tables created from S3 Parquet files"
+    tables:
+      - name: ext_raw_crypto_data
+        description: "Cryptocurrency market data"
+        external:
+          location: "s3://currency_exchange_staging/crypto_data/"
+          format: "parquet"
+        columns:
+          - name: id
+            description: "Coin ID"
+          - name: symbol
+            description: "Coin Symbol"
+          - name: current_price
+            description: "Current Price in USD"
+          - name: market_cap
+            description: "Market Capitalization"
